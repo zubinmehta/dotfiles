@@ -3,6 +3,9 @@
     email = zubinpm@gmail.com
 
 [core]
+    autocrlf = input
+    compression = 9
+    filemode = false
     excludesfile = ~/.gitignore
     editor = vim
 
@@ -28,6 +31,27 @@
     new = green bold
 
 [color "status"]
-    added = yellow
-    changed = green
-    untracked = red
+    added = green
+    changed = red
+    untracked = magenta white bold dim
+
+[web]
+    browser = google-chrome
+
+[diff]
+    tool = vimdiff
+
+[difftool]
+    prompt = false
+
+[github]
+    user = zubinmehta
+    token = token
+
+[gitflow "prefix"]
+    feature = feature-
+    release = release-
+    hotfix = hotfix-
+    support = support-
+    versiontag = v
+
