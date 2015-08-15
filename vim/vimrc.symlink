@@ -16,9 +16,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'powerline/powerline'
+Plugin 'kien/ctrlp.vim'
 " L9
 " nerdtree
-" ctrlp
 " python-mode
 " tagbar
 " ag.vim
@@ -278,4 +278,17 @@ map 0 ^
 " 1. see spf13-vim
 " 2. YADR vim
 " 3. amix vimrc
+
+
+" CtrlP 
+" ===============================================
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+let g:ctrlp_working_path_mode = 'ra'
+
+map <leader>t :CtrlPMixed<CR>
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|bower_components|target|dist)|(\.(swp|ico|git|svn))$'
+
 
