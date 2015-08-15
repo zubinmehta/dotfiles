@@ -1,0 +1,281 @@
+" This must be first, because it changes other options as side effect
+" Use Vim defaults (much better!)
+set nocompatible              " be iMproved, required
+
+" Vundle configuration
+" ==============================================
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'powerline/powerline'
+" L9
+" nerdtree
+" ctrlp
+" python-mode
+" tagbar
+" ag.vim
+" other bundles from old vimrc
+" vim-airline
+
+" Resume Normal vim configuration
+" ==============================================
+filetype plugin indent on
+
+
+" Colors  and Fonts {{{
+" ==============================================
+if &t_Co >= 256 || has("gui_running")
+    " colorscheme mustang
+    colorscheme evening
+endif
+
+if &t_Co > 2 || has("gui_running")
+    " switch syntax highlighting on, when the terminal has colors
+    syntax on
+endif
+syntax enable
+
+" Set extra options when running in GUI mode
+if has("gui_running")
+    set guioptions-=T
+    set guioptions-=e
+    set t_Co=256
+    set guitablabel=%M\ %t
+endif
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+
+
+" }}}
+
+" General Misc defaults
+" ==============================================
+set hidden        " allow buffers to be hidden - It hides buffers instead of closing them. This means that you can have unwritten changes to a file and open a new file using :e, without being forced to write or undo your changes first. Also, undo buffers and marks are preserved while the buffer is open.
+set ignorecase    " ignore case when searching
+set smartcase     " ignore case if search pattern is all lowercase, case-sensitive otherwise
+set shiftwidth=4  " number of spaces to use for autoindenting
+set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
+set backspace=indent,eol,start
+                  " allow backspacing over everything in insert mode
+set autoindent    " always set autoindenting on
+" set copyindent    " copy the previous indentation on autoindenting
+set history=1000  " remember more commands and search history
+set undolevels=1000
+                  " use many muchos levels of undo
+set visualbell    " don't beep
+set noerrorbells  " don't beep
+set wildignore=*.swp,*.bak,*.pyc,*.class,*/migrations/*,*/blackhole__/*,*/tmp/*,*/search*/*
+set title         " change the terminal's title
+set ruler         " show the cursor position all the time
+set pastetoggle=<F2>
+                  " toggle paste mode
+
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set mouse=a
+" Set to auto read when a file is changed from the outside
+set autoread
+
+
+
+" Spaces & Tabs {{{
+" ==============================================
+set tabstop=4
+set softtabstop=4   " number of spaces in tab when editing
+set expandtab       " tabs are spaces
+set smarttab        " insert tabs on the start of a line according to shiftwidth, not tabstop
+" }}}
+
+" UI Config
+" ==============================================
+set number              " show line numbers
+set showcmd             " show command in bottom bar
+set cursorline          " highlight current line
+
+filetype indent on      " load filetype-specific indent files
+
+" Cool tab completion stuff while entering commands
+set wildmenu
+set wildmode=list:longest,full
+
+set lazyredraw          " redraw only when we need to.
+set showmatch           " highlight matching [{()}]
+
+set hlsearch      " highlight search terms
+set incsearch     " show search matches as you type
+
+nnoremap <leader><space> :nohlsearch<CR>
+" turn off search highlight
+
+" Folding
+" ==============================================
+set foldenable
+set foldmethod=indent
+set foldcolumn=0
+set foldlevel=10       " opem most folds by default
+
+
+" Movement
+" ===============================================
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+
+" move to beginning/end of line
+nnoremap B ^
+nnoremap E $
+
+" $/^ doesn't do anything: Temporary just to train myself to not use these.
+nnoremap $ <nop>
+nnoremap ^ <nop>
+
+" highlight last inserted text
+nnoremap gV `[v`]
+
+" Disallow movement using arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+
+" Leader Shortcuts
+" ===============================================
+let mapleader=","       " leader is comma
+let maplocalleader="\\"
+
+
+" edit vimrc/zshrc and load vimrc bindings
+nnoremap <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <leader>ez :vsp ~/.zshrc<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+
+" save session
+nnoremap <leader>s :mksession<CR>
+
+" open ag.vim
+nnoremap <leader>a :Ag
+
+" Easy window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Tired of clearing highlighted searches by searching for 'ldsfhjkhgakjks' ?
+nmap <silent> ,/ :nohlsearch<CR>
+
+cmap w!! w !sudo tee % >/dev/null
+
+" Search mappings: These will make it so that going to the next one in a
+" search will center on the line it's found in.
+map N Nzz
+map n nzz
+
+
+
+" CtrlP
+" ===============================================
+" Check here: http://dougblack.io/words/a-good-vimrc.html
+
+
+" Vundle
+" ===============================================
+
+
+
+" AutoGroups
+" ===============================================
+augroup configgroup
+    autocmd!
+    autocmd VimEnter * highlight clear SignColumn
+    autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md
+                \:call <SID>StripTrailingWhitespaces()
+    autocmd FileType java setlocal noexpandtab
+    autocmd FileType java setlocal list
+    autocmd FileType java setlocal listchars=tab:+\ ,eol:-
+    autocmd FileType java setlocal formatprg=par\ -w80\ -T4
+    autocmd FileType php setlocal expandtab
+    autocmd FileType php setlocal list
+    autocmd FileType php setlocal listchars=tab:+\ ,eol:-
+    autocmd FileType php setlocal formatprg=par\ -w80\ -T4
+    autocmd FileType ruby setlocal tabstop=2
+    autocmd FileType ruby setlocal shiftwidth=2
+    autocmd FileType ruby setlocal softtabstop=2
+    autocmd FileType ruby setlocal commentstring=#\ %s
+    autocmd FileType python setlocal commentstring=#\ %s
+    autocmd FileType python setlocal expandtab
+    autocmd filetype html,xml set listchars-=tab:>.
+    autocmd BufEnter *.cls setlocal filetype=java
+    autocmd BufEnter *.zsh-theme setlocal filetype=zsh
+    autocmd BufEnter Makefile setlocal noexpandtab
+    autocmd BufEnter *.sh setlocal tabstop=2
+    autocmd BufEnter *.sh setlocal shiftwidth=2
+    autocmd BufEnter *.sh setlocal softtabstop=2
+augroup END
+
+
+" Backups
+" ===============================================
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/*
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set writebackup
+
+
+
+" Custom Functions
+" ===============================================
+
+" strips trailing whitespace at the end of files. this
+" is called on buffer write in the autogroup above.
+function! <SID>StripTrailingWhitespaces()
+    " save last search & cursor position
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+" toggle between number and relativenumber
+function! ToggleNumber()
+    if(&relativenumber == 1)
+        set norelativenumber
+        set number
+    else
+        set relativenumber
+    endif
+endfunc
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Editing mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Remap VIM 0 to first non-blank character
+map 0 ^
+
+
+"
+" ===============================================
+" ===============================================
+" ===============================================
+" TODO:
+" 1. see spf13-vim
+" 2. YADR vim
+" 3. amix vimrc
+
