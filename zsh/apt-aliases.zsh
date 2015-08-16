@@ -1,0 +1,11 @@
+alias s='apt-cache search'
+alias search='apt-cache search'
+alias i='sudo apt-get install'
+alias clean='sudo apt-get autoclean && sudo apt-get autoremove'
+alias remove='sudo apt-get remove'
+alias update='sudo apt-get update'
+alias upgrade='sudo apt-get upgrade'
+alias upg='sudo apt-get upgrade'
+alias auto='sudo apt-get autoremove'
+alias up='sudo apt-get update && sudo apt-get upgrade'
+
