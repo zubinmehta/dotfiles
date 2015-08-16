@@ -41,6 +41,8 @@ call vundle#end()            " required
 " ==============================================
 filetype plugin indent on
 
+let &t_Co=256
+
 " Colors  and Fonts {{{
 " ==============================================
 if &t_Co >= 256 || has("gui_running")
@@ -48,12 +50,11 @@ if &t_Co >= 256 || has("gui_running")
     " colorscheme evening
     syntax on
     syntax enable
-    set background=dark
     colorscheme solarized
 endif
 syntax enable
-set background=dark
 colorscheme solarized
+set background=dark
 
 if &t_Co > 2 || has("gui_running")
     " switch syntax highlighting on, when the terminal has colors
@@ -71,7 +72,8 @@ endif
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
-
+set encoding=utf-8
+set fileencodings=utf-8,latin1
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
@@ -338,12 +340,16 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'molokai'
+"let g:airline_theme = 'wombat'
+"let g:airline_theme = 'luna'
+let g:airline_theme = 'solarized'
+let g:airline_theme = 'sol'
+" Airline Theme options: https://github.com/bling/vim-airline/wiki/Screenshots
+" Also see :AirlineTheme <TAB> in command mode
 
 " let g:airline_theme             = 'powerlineish'
-let g:airline_enable_branch     = 1
 " let g:airline_enable_syntastic  = 1
 
 " vim-powerline symbols
 " ?
-
 
