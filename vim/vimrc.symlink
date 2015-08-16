@@ -9,33 +9,49 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+" call vundle#rc()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'powerline/powerline'
+" Plugin 'powerline/powerline'
 Plugin 'kien/ctrlp.vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+" Plugin 'Shougo/neocomplete.vim'
+Plugin 'Valloric/YouCompleteMe'
+" Plugin 'mileszs/ack.vim'
+Plugin 'rking/ag.vim'
+Plugin 'bling/vim-airline'
+Plugin 'klen/python-mode'
+Plugin 'tpope/vim-surround'
+Plugin 'majutsushi/tagbar'
+Plugin 'altercation/vim-colors-solarized'
 " L9
-" nerdtree
-" python-mode
-" tagbar
 " ag.vim
 " other bundles from old vimrc
-" vim-airline
+call vundle#end()            " required
 
 " Resume Normal vim configuration
 " ==============================================
 filetype plugin indent on
 
-
 " Colors  and Fonts {{{
 " ==============================================
 if &t_Co >= 256 || has("gui_running")
     " colorscheme mustang
-    colorscheme evening
+    " colorscheme evening
+    syntax on
+    syntax enable
+    set background=dark
+    colorscheme solarized
 endif
+syntax enable
+set background=dark
+colorscheme solarized
 
 if &t_Co > 2 || has("gui_running")
     " switch syntax highlighting on, when the terminal has colors
@@ -56,7 +72,6 @@ set encoding=utf8
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
-
 
 " }}}
 
@@ -270,8 +285,6 @@ endfunc
 map 0 ^
 
 
-"
-" ===============================================
 " ===============================================
 " ===============================================
 " TODO:
@@ -280,7 +293,7 @@ map 0 ^
 " 3. amix vimrc
 
 
-" CtrlP 
+" CtrlP
 " ===============================================
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_map = '<c-p>'
@@ -290,5 +303,36 @@ let g:ctrlp_working_path_mode = 'ra'
 
 map <leader>t :CtrlPMixed<CR>
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|bower_components|target|dist)|(\.(swp|ico|git|svn))$'
+
+let g:EasyMotion_leader_key = '<Leader>'
+
+
+" Solarized color theme
+let g:solarized_termcolors=256
+
+
+" NERDTree
+" ===============================================
+map <C-n> :NERDTreeToggle<CR>
+
+" How can I close vim if the only window left open is a NERDTree?
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" NERDCommenter
+" ===============================================
+"[count]<leader>cc |NERDComComment|
+"Comment out the current line or text selected in visual mode.
+
+"[count]<leader>cn |NERDComNestedComment|
+"Same as <leader>cc but forces nesting.
+
+"[count]<leader>c<space> |NERDComToggleComment|
+"Toggles the comment state of the selected line(s). If the topmost selected line is commented, all selected lines are uncommented and vice versa.
+
+
+" vim airline
+" ===============================================
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
 
 
