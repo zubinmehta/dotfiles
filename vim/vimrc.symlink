@@ -30,6 +30,8 @@ Plugin 'klen/python-mode'
 Plugin 'tpope/vim-surround'
 Plugin 'majutsushi/tagbar'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-fugitive'
+
 " L9
 " ag.vim
 " other bundles from old vimrc
@@ -334,5 +336,14 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " ===============================================
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'molokai'
+
+" let g:airline_theme             = 'powerlineish'
+let g:airline_enable_branch     = 1
+" let g:airline_enable_syntastic  = 1
+
+" vim-powerline symbols
+" ?
 
 
