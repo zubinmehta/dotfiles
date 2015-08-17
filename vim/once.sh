@@ -1,2 +1,2 @@
 cd ~/.vim/bundle/YouCompleteMe/
-./install.sh --clang-completer --gocode-completer
+YCM_CORES=1 ./install.sh --clang-completer --system-libclang --gocode-completer
