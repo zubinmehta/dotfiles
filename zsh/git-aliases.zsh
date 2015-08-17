@@ -1,5 +1,4 @@
 alias gst='git status'
-alias gco='git commit'
 alias gdi='git diff'
 alias gdic='git diff --cached'
 
