@@ -6,11 +6,18 @@ set -e
 
 cd "$(dirname $0)"/..
 
+echo "PRE installations....."
+echo "=========================="
 find . -name pre_install.sh | sort | while read installer ; do echo "======================================================"; sh -c "${installer}" ; done
+
+echo "main installations....."
+echo "=========================="
 
 # find the installers and run them iteratively
 find . -name install.sh | sort | while read installer ; do echo "======================================================"; sh -c "${installer}" ; done
 
+echo "Post installations....."
+echo "=========================="
 #separately run vim installer as it blows up on exiting after installing plugins
 find . -name post_install.sh | sort | while read installer ; do echo "======================================================"; sh -c "${installer}" ; done
 
