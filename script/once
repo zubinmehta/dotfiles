@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#
+# find the scripts to be run only once and run them iteratively
+
+set -e
+
+cd "$(dirname $0)"/..
+
+find . -name once.sh | sort | while read installer ; do sh -c "${installer}" ; done
