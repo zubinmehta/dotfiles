@@ -33,7 +33,7 @@
 [color "status"]
     added = green
     changed = red
-    untracked = magenta white bold dim
+    untracked = black white bold dim
 
 [web]
     browser = google-chrome
