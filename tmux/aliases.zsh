@@ -1,1 +1,1 @@
-alias tmux='tmux -2'
+alias tmux="TERM=screen-256color tmux -2"
