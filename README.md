@@ -9,7 +9,7 @@ zsh / vim / tmux / python
 Run this:
 
 ```sh
-git clone https://github.com/zubinmehta/dotfiles.git ~/.dotfiles
+git clone https://github.com/zing42/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
 ```
