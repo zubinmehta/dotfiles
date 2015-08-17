@@ -6,6 +6,12 @@ zsh / vim / tmux / python
 
 ## install
 
+Run this before anything else:
+
+```sh
+script/pre
+```
+
 Run this:
 
 ```sh
