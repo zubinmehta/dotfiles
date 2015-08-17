@@ -220,8 +220,8 @@ map n nzz
 augroup configgroup
     autocmd!
     autocmd VimEnter * highlight clear SignColumn
-    autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md
-                \:call <SID>StripTrailingWhitespaces()
+    "autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md
+    "            \:call <SID>StripTrailingWhitespaces()
     autocmd FileType java setlocal noexpandtab
     autocmd FileType java setlocal list
     autocmd FileType java setlocal listchars=tab:+\ ,eol:-
@@ -353,3 +353,50 @@ let g:airline_theme = 'sol'
 " vim-powerline symbols
 " ?
 
+" Python mode
+" ================================================
+" Disable pylint checking every save
+let g:pymode_lint_write = 1
+" Load rope plugin
+let g:pymode_rope = 1
+
+let g:pymode_lint_checker = "pylint"
+" let g:pymode_lint_ignore = "C0"
+let g:pymode_lint_config = "$HOME/.pylintrc"
+" Pylint configuration file
+" If file not found use 'pylintrc' from python-mode plugin directory
+" let g:pymode_lint_config = "~/.pylintrc"
+
+let g:pymode_rope_complete_on_dot = 0
+
+" Auto create and open ropeproject
+let g:pymode_rope_auto_project = 1
+
+" Enable autoimport
+let g:pymode_rope_enable_autoimport = 1
+
+" Auto generate global cache
+let g:pymode_rope_autoimport_generate = 1
+
+let g:pymode_rope_autoimport_underlineds = 0
+
+let g:pymode_rope_codeassist_maxfixes = 10
+
+let g:pymode_rope_sorted_completions = 1
+
+let g:pymode_rope_extended_complete = 1
+
+let g:pymode_rope_autoimport_modules = ["os","shutil","datetime"]
+
+let g:pymode_rope_confirm_saving = 1
+
+let g:pymode_rope_global_prefix = "<C-x>p"
+
+let g:pymode_rope_local_prefix = "<C-c>r"
+
+let g:pymode_rope_vim_completion = 1
+
+let g:pymode_rope_guess_project = 1
+let g:pymode_rope_goto_def_newwin = ""
+
+let g:pymode_rope_always_show_complete_menu = 0
