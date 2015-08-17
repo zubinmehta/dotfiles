@@ -1,5 +1,8 @@
 # z does dotfiles
 
+## What you got ?
+
+zsh / vim / tmux / python
 
 ## install
 
@@ -17,11 +20,19 @@ To install scripts:
 script/install
 ```
 
-To run scripts only once: 
+## once
+
+To run (install) scripts only once: 
+Sometimes, I wanted to run a particular install script only once 
+(YouCompleteMe install script for example) as it takes a lot of time 
+and I happen to run script/install often
 
 ```sh
 script/once
 ```
+
+`script/once` is just like script/install except that its just a different namespace. 
+It is exactly like script/install except it looks for `once.sh` in your topical directories
 
 
 ## topical
