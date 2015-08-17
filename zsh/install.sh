@@ -1,5 +1,3 @@
-#!/bin/zsh
-
 if [ ! -d "$HOME/.dir_colors" ]
 then
   git clone git@github.com:seebi/dircolors-solarized.git ~/.dir_colors
