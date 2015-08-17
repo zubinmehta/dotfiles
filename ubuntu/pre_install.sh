@@ -1,1 +1,1 @@
-sudo apt-get install -y curl zsh
+sudo apt-get install -y curl zsh vim
