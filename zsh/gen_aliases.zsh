@@ -4,7 +4,7 @@ alias ~="cd ~"
 #list stuff
 alias ll="ls -hl --group-directories-first"
 #alias ls='ls -altrh --color'  # add colors for filetype recognition
-alias ls='ls -altrh'  # add colors for filetype recognition
+alias ls='ls -altrh --color'  # add colors for filetype recognition
 alias la='ls -Alh'          # show hidden files
 alias lx='ls -lXBh'         # sort by extension
 alias lk='ls -lShr'         # sort by size, biggest last
