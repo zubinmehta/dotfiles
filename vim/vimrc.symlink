@@ -400,3 +400,9 @@ let g:pymode_rope_guess_project = 1
 let g:pymode_rope_goto_def_newwin = ""
 
 let g:pymode_rope_always_show_complete_menu = 0
+
+
+" TagBar config
+" ==============================================
+nmap <F8> :TagbarToggle<CR>
+
