@@ -1,6 +1,7 @@
 " This must be first, because it changes other options as side effect
 " Use Vim defaults (much better!)
-set nocompatible              " be iMproved, required
+" be iMproved, required
+set nocompatible
 
 " Vundle configuration
 " ==============================================
@@ -31,36 +32,25 @@ Plugin 'tpope/vim-surround'
 Plugin 'majutsushi/tagbar'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
-
 " L9
-" ag.vim
 " other bundles from old vimrc
 call vundle#end()            " required
+
 
 " Resume Normal vim configuration
 " ==============================================
 filetype plugin indent on
 
-let &t_Co=256
-
 " Colors  and Fonts {{{
 " ==============================================
-if &t_Co >= 256 || has("gui_running")
-    " colorscheme mustang
-    " colorscheme evening
-    syntax on
-    syntax enable
-    colorscheme solarized
-endif
+" stop Solarized from displaying italicized typefaces
+let g:solarized_italic=0
+syntax on
 syntax enable
-colorscheme solarized
+let g:solarized_termcolors=256
+set t_Co=256 
 set background=dark
-
-if &t_Co > 2 || has("gui_running")
-    " switch syntax highlighting on, when the terminal has colors
-    syntax on
-endif
-syntax enable
+colorscheme solarized
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -309,10 +299,6 @@ map <leader>t :CtrlPMixed<CR>
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|bower_components|target|dist)|(\.(swp|ico|git|svn))$'
 
 let g:EasyMotion_leader_key = '<Leader>'
-
-
-" Solarized color theme
-let g:solarized_termcolors=256
 
 
 " NERDTree
