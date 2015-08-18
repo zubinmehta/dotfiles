@@ -8,5 +8,4 @@ fi
 eval "$(dircolors ~/.dir_colors/dircolors.256dark)"
 echo "dir_colors set to solarized theme"
 
-chsh -s $(which zsh)
-
+sudo chsh -s $(which zsh)
