@@ -38,7 +38,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-export DOTFILES=$HOME/workspace/dotfiles
+export DOTFILES=$HOME/.dotfiles
 
 # Stash your environment variables in ~/.localrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
