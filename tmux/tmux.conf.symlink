@@ -31,7 +31,7 @@ bind-key l select-pane -R
 
 # Set the title bar
 set -g set-titles on
-set -g set-titles-string '#(whoami) :: #h :: #(curl ipecho.net/plain;echo)'
+#set -g set-titles-string '#(whoami) :: #h :: #(curl ipecho.net/plain;echo)'
 
 # Set status bar
 set -g status-utf8 on
@@ -39,8 +39,8 @@ set -g status-bg black
 set -g status-fg white
 set -g status-interval 5 
 set -g status-left-length 90
-set -g status-right-length 60
-set -g status-left "#[fg=Green]#(whoami)#[fg=white] | #[fg=blue]#(hostname -s)#[fg=white] | #[fg=yellow]#(curl ipecho.net/plain;echo)"
+set -g status-right-length 80
+#set -g status-left "#[fg=Green]#(whoami)#[fg=white] | #[fg=blue]#(hostname -s)#[fg=white] | #[fg=yellow]#(curl ipecho.net/plain;echo)"
 set -g status-justify left
 set -g status-right '#[fg=Cyan]#S #[fg=white]%a %d %b %R'
 
@@ -70,6 +70,9 @@ set-window-option -g window-status-current-bg default
 # pane border
 set-option -g pane-border-fg colour235 #base02
 set-option -g pane-active-border-fg colour240 #base01
+set -g pane-border-fg magenta
+set -g pane-active-border-fg green
+#set -g pane-active-border-bg default
 
 # message text
 set-option -g message-bg colour235 #base02
@@ -85,6 +88,15 @@ set-window-option -g clock-mode-colour colour64 #green
 # quick pane cycling
 unbind ^A
 bind ^A select-pane -t :.+
+
+# resize panes like vim
+bind < resize-pane -L 10
+bind > resize-pane -R 10
+bind - resize-pane -D 10
+bind + resize-pane -U 10
+
+# start new pane from the same directory
+# bind c new-window -c "$PWD"
 
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
