@@ -32,6 +32,9 @@ Plugin 'tpope/vim-surround'
 Plugin 'majutsushi/tagbar'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'chase/vim-ansible-yaml'
+
 " L9
 " other bundles from old vimrc
 call vundle#end()            " required
@@ -49,7 +52,8 @@ syntax on
 syntax enable
 let g:solarized_termcolors=256
 set t_Co=256 
-set background=dark
+set background=light
+" set background=dark
 colorscheme solarized
 
 " Set extra options when running in GUI mode
@@ -291,7 +295,8 @@ map 0 ^
 " ===============================================
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+" let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_cmd = 'CtrlPMixed'
 
 let g:ctrlp_working_path_mode = 'ra'
 
@@ -392,3 +397,4 @@ let g:pymode_rope_always_show_complete_menu = 0
 " ==============================================
 nmap <F8> :TagbarToggle<CR>
 
+set clipboard=unnamedplus
