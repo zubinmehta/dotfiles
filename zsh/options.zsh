@@ -14,4 +14,5 @@ export SAVEHIST=200000                 # huge history file
 
 setopt extendedhistory
 
-
+# bindkey -v
+bindkey '^R' history-incremental-search-backward

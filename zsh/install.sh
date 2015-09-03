@@ -10,4 +10,4 @@ echo "dir_colors set to solarized theme"
 
 sudo chsh -s $(which zsh)
 
-sudo pip install --upgrade autoenv
+sudo -H pip install --upgrade autoenv
