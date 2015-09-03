@@ -6,6 +6,11 @@ zsh / vim / tmux / python
 
 ## install
 
+```sh
+git clone https://github.com/zubinmehta/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+```
+
 Run this before anything else:
 
 ```sh
@@ -15,8 +20,6 @@ script/pre
 Run this:
 
 ```sh
-git clone https://github.com/zubinmehta/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
 script/bootstrap
 ```
 

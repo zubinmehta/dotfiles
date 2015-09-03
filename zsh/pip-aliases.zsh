@@ -1,5 +1,5 @@
-alias spi='sudo pip install'
-alias spu='sudo pip install --upgrade'
+alias spi='sudo -H pip install'
+alias spu='sudo -H pip install --upgrade'
 alias pi='pip install'
 alias pu='pip install --upgrade'
 
