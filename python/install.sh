@@ -1,5 +1,5 @@
 sudo -H pip install --upgrade pip
-sudo pip install --upgrade virtualenvwrapper ipython requests
-sudo pip2 install --upgrade virtualenvwrapper ipython requests
-sudo pip3 install --upgrade virtualenvwrapper ipython requests
+sudo -H pip install --upgrade virtualenvwrapper ipython requests
+sudo -H pip2 install --upgrade virtualenvwrapper ipython requests
+sudo -H pip3 install --upgrade virtualenvwrapper ipython requests
 
