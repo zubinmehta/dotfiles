@@ -34,6 +34,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'chase/vim-ansible-yaml'
+Plugin 'mustache/vim-mustache-handlebars'
 
 " L9
 " other bundles from old vimrc
@@ -53,7 +54,7 @@ syntax enable
 let g:solarized_termcolors=256
 set t_Co=256 
 set background=light
-" set background=dark
+"set background=dark
 colorscheme solarized
 
 " Set extra options when running in GUI mode
@@ -230,6 +231,7 @@ augroup configgroup
     autocmd FileType ruby setlocal commentstring=#\ %s
     autocmd FileType python setlocal commentstring=#\ %s
     autocmd FileType python setlocal expandtab
+    autocmd FileType javascript  setlocal  ts=2 sw=2 sts=2 expandtab
     autocmd filetype html,xml set listchars-=tab:>.
     autocmd BufEnter *.cls setlocal filetype=java
     autocmd BufEnter *.zsh-theme setlocal filetype=zsh
@@ -398,3 +400,5 @@ let g:pymode_rope_always_show_complete_menu = 0
 nmap <F8> :TagbarToggle<CR>
 
 set clipboard=unnamedplus
+
+ca te tabedit

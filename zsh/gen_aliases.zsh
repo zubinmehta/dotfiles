@@ -28,3 +28,4 @@ alias cb="chromium-browser"
 alias vzsh="vim ~/.zshrc"
 alias szsh="source ~/.zshrc"
 
+alias hugo="~/go/bin/hugo"
