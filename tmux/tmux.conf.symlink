@@ -46,6 +46,10 @@ set -g status-right '#[fg=Cyan]#S #[fg=white]%a %d %b %R'
 
 # enable mouse scroll
 set-window-option -g mode-mouse on
+set -g mode-mouse on
+# Sane scrolling
+set -g terminal-overrides 'xterm*:smcup@:rmcup@'
+#
 set display-panes-time 2000 #2s
 
 
