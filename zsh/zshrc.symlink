@@ -77,7 +77,9 @@ done
 unset config_files
 unset DOTFILES
 
-export NVM_DIR="/home/zubin/.nvm"
+# export NVM_DIR="/home/zubin/.nvm"
+export NVM_DIR="/home/shilpi/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+export PATH="~/.node/bin:~/workspace/R:$PATH"

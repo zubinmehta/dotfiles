@@ -35,6 +35,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'vim-airline/vim-airline-themes'
+
 
 " L9
 " other bundles from old vimrc
@@ -403,8 +405,6 @@ set clipboard=unnamedplus
 
 ca te tabedit
 
-
-
 " Buffer magica
 " =============================================
 " To open a new empty buffer
@@ -424,3 +424,4 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 " Show all open buffers and their status
 nmap <leader>bl :ls<CR>
 
+set clipboard=unnamedplus

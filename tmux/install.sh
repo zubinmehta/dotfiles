@@ -10,5 +10,5 @@ fi
 
 tmux source ~/.tmux.conf
 
-echo "AFter installation open ~/.tmux.conf and run (prefix + I) to install tmux plugins"
+echo "AFter installation open tmux and run (prefix + I) to install tmux plugins"
 
