@@ -8,39 +8,63 @@ set nocompatible
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
 " call vundle#rc()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+"Plugin 'VundleVim/Vundle.vim'
 
-" Plugin 'powerline/powerline'
-Plugin 'kien/ctrlp.vim'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-" Plugin 'Shougo/neocomplete.vim'
-Plugin 'Valloric/YouCompleteMe'
-" Plugin 'mileszs/ack.vim'
-Plugin 'rking/ag.vim'
-Plugin 'bling/vim-airline'
-Plugin 'klen/python-mode'
-Plugin 'tpope/vim-surround'
-Plugin 'majutsushi/tagbar'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tpope/vim-fugitive'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'chase/vim-ansible-yaml'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'vim-airline/vim-airline-themes'
+"" Plugin 'powerline/powerline'
+"Plugin 'kien/ctrlp.vim'
+"Plugin 'easymotion/vim-easymotion'
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdcommenter'
+"" Plugin 'Shougo/neocomplete.vim'
+"Plugin 'Valloric/YouCompleteMe'
+"" Plugin 'mileszs/ack.vim'
+"Plugin 'rking/ag.vim'
+"Plugin 'bling/vim-airline'
+"Plugin 'klen/python-mode'
+"Plugin 'tpope/vim-surround'
+"Plugin 'majutsushi/tagbar'
+"Plugin 'altercation/vim-colors-solarized'
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'davidhalter/jedi-vim'
+"Plugin 'chase/vim-ansible-yaml'
+"Plugin 'mustache/vim-mustache-handlebars'
+"Plugin 'vim-airline/vim-airline-themes'
 
 
 " L9
 " other bundles from old vimrc
-call vundle#end()            " required
+"call vundle#end()            " required
+
+call plug#begin()
+
+" Plugin 'powerline/powerline'
+Plug 'kien/ctrlp.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+" Plugin 'Shougo/neocomplete.vim'
+"Plug 'Valloric/YouCompleteMe'
+" Plugin 'mileszs/ack.vim'
+Plug 'rking/ag.vim'
+Plug 'bling/vim-airline'
+Plug 'klen/python-mode'
+Plug 'tpope/vim-surround'
+Plug 'majutsushi/tagbar'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-fugitive'
+Plug 'davidhalter/jedi-vim'
+Plug 'chase/vim-ansible-yaml'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'vim-airline/vim-airline-themes'
+
+call plug#end()
 
 
 " Resume Normal vim configuration
